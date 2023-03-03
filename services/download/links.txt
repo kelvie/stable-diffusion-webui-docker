@@ -14,3 +14,5 @@ https://heibox.uni-heidelberg.de/f/31a76b13ea27482981b4/?dl=1
   out=LDSR/project.yaml
 https://heibox.uni-heidelberg.de/f/578df07c8fc04ffbadf3/?dl=1
   out=LDSR/model.ckpt
+https://developer.download.nvidia.com/compute/redist/cudnn/v8.8.0/local_installers/11.8/cudnn-local-repo-ubuntu2204-8.8.0.121_1.0-1_amd64.deb
+  out=cudnn/cudnn.deb
