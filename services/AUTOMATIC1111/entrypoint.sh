@@ -56,6 +56,13 @@ for to_path in "${!MOUNTS[@]}"; do
   echo Mounted $(basename "${from_path}")
 done
 
+# Install requirements from extensions
+reqfiles=/data/config/auto/extensions/*/requirements.txt
+if [ -n "$reqfiles" ]; then
+for rf in $reqfiles; do
+  pip install -r "$rf"
+done
+fi
 if [ -f "/data/config/auto/startup.sh" ]; then
   pushd ${ROOT}
   . /data/config/auto/startup.sh
