@@ -66,6 +66,7 @@ for rf in $reqfiles; do
   pip install -r "$rf"
 done
 fi
+
 if [ -f "/data/config/auto/startup.sh" ]; then
   pushd ${ROOT}
   . /data/config/auto/startup.sh
@@ -76,6 +77,7 @@ fi
 if [ -f "/data/cudnn/libcudnn.so.8" ]; then
   PYTORCH_PATH=$(python -c "import torch; print(torch.__path__[0])")
   cp /data/cudnn/lib* "$PYTORCH_PATH"/lib/
+  ln -sf /data/cudnn/lib* /usr/lib/x86_64-linux-gnu
 fi
 
 exec "$@"
